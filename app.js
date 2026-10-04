@@ -2,10 +2,10 @@ const STORAGE_KEY = "cv-modular-v1";
 const ZOOM_KEY = "cv-modular-zoom";
 
 const DESC =
-  "Driven by the intersection of human cognition and computational technology, I offer a unique profile combining neuroscientific research with advanced UX/HCI expertise. With hands-on experience in neural signal processing (P300 spellers) and a background in experimental psychology, I possess strong quantitative skills and proficiency in Python and Matlab. My current professional experience as a UX Designer has refined my ability to model complex systems and analyze user behavior—capabilities that I aim to apply to the development of biologically realistic neural networks and individual-based biomarkers in the visual cortex.";
+  "Driven by the intersection of human cognition and computational technology, I offer a unique profile combining neuroscientific research with advanced UX/HCI expertise. With hands-on experience in neural signal processing (P300 spellers) and a background in experimental psychology, I possess strong quantitative skills and proficiency in Python and MATLAB. My current professional experience as a UX Designer has refined my ability to model complex systems and analyze user behavior—capabilities that I aim to apply to the development of biologically realistic neural networks and individual-based biomarkers in the visual cortex.";
 
 const PRIVACY =
-  "Autorizzo il trattamento dei dati personali contenuti nel mio curriculum vitae in base all’art. 13 del D. Lgs. 196/2003 e all’art. 13 GDPR 679/16. ";
+  "Autorizzo il trattamento dei dati personali contenuti nel mio curriculum vitae in base all’art. 13 del D. Lgs. 196/2003 e all’art. 13 del GDPR (Regolamento UE 2016/679).";
 
 let seq = 1;
 let zoom = 1;
@@ -54,7 +54,7 @@ function createState(preset) {
     ]),
     skillGroup("sk-model", "Modeling & Stats", !ux, 12, [
       skillItem("bayes", "Bayesian statistics"),
-      skillItem("ml", "Machine Learning basics "),
+      skillItem("ml", "Machine Learning basics"),
       skillItem("sig", "Signal processing"),
     ]),
   ];
@@ -69,13 +69,13 @@ function createState(preset) {
       skillItem("shopify", "Shopify"),
       skillItem("elementor", "Elementor"),
       skillItem("framer", "Framer"),
-      skillItem("wp", "Wordpress"),
+      skillItem("wp", "WordPress"),
     ]),
     skillGroup("sk-dev", "Development", ux, 12, [
       skillItem("html", "HTML"),
       skillItem("css", "CSS"),
       skillItem("cpp", "C++"),
-      skillItem("js", "Javascript"),
+      skillItem("js", "JavaScript"),
     ]),
     skillGroup("sk-research", "User Research & Analysis", ux, 16, [
       skillItem("heur", "Heuristic Analysis"),
@@ -97,11 +97,11 @@ function createState(preset) {
         id: "edu-msc",
         enabled: true,
         editorLabel: "Master",
-        dates: ux ? "Septemer 2021 - Dicember 2023" : "September 2021 - Dicember 2023",
+        dates: "September 2021 - December 2023",
         segments: [
           seg("msc-a", "Master’s in ", 400),
           seg("msc-b", "Human-Computer Interaction", 400, "#0059e7"),
-          seg("msc-c", ", University di Trento", 400),
+          seg("msc-c", ", University of Trento", 400),
         ],
         bullets: [
           bullet(
@@ -113,7 +113,7 @@ function createState(preset) {
           bullet(
             "msc-ks",
             "Key Skills:",
-            "Signal processing, Brain-Computer Interface (BCI), Feature extraction, Python/Matlab coding",
+            "Signal processing, Brain-Computer Interface (BCI), Feature extraction, Python/MATLAB coding",
             !ux
           ),
         ],
@@ -122,11 +122,11 @@ function createState(preset) {
         id: "edu-bsc",
         enabled: true,
         editorLabel: "Bachelor",
-        dates: ux ? "Septemver 2017 - July 2020" : "September 2017 - July 2020",
+        dates: "September 2017 - July 2020",
         segments: [
           seg("bsc-a", "Bachelor’s in ", 400),
           seg("bsc-b", "Psychological Science,", 400, "#0059e7"),
-          seg("bsc-c", " University di Padova ", 400),
+          seg("bsc-c", " University of Padova", 400),
         ],
         bullets: [
           bullet(
@@ -156,33 +156,33 @@ function createState(preset) {
         id: "job-boraso-r",
         enabled: !ux,
         editorLabel: "Boraso · ricerca",
-        dates: "March 2024 – October 2024 |  July 2025 – Present",
+        dates: "March 2024 – October 2024 | July 2025 – Present",
         segments: [
           seg("br-a", "UX/UI Designer @ ", 700),
           seg("br-b", "Boraso", 700, "#0059e7"),
-          seg("br-c", " (Conversion Marketing Agency) ", 400),
+          seg("br-c", " (Conversion Marketing Agency)", 400),
         ],
         bullets: [
           bullet("br-1", "", "Applied User-Centered Design principles to complex digital systems, focusing on data visualization and human-computer workflows.", true),
-          bullet("br-2", "", "Conducted extensive user research and data analysis, translating empirical findings into functional system requirements ", true),
-          bullet("br-3", "", "Managed end-to-end project lifecycles", true),
+          bullet("br-2", "", "Conducted extensive user research and data analysis, translating empirical findings into functional system requirements.", true),
+          bullet("br-3", "", "Managed end-to-end project lifecycles.", true),
         ],
       },
       {
         id: "job-boraso-ux",
         enabled: ux,
         editorLabel: "Boraso · UX",
-        dates: "March 2024 – October 2024 |  July 2025 – Present",
+        dates: "March 2024 – October 2024 | July 2025 – Present",
         segments: [
           seg("bu-a", "UX/UI Designer @ ", 700),
           seg("bu-b", "Boraso", 700, "#0059e7"),
-          seg("bu-c", " (Conversion Marketing Agency) ", 400),
+          seg("bu-c", " (Conversion Marketing Agency)", 400),
         ],
         bullets: [
           bullet("bu-1", "", "Lead end-to-end design for large-scale international Shopify stores.", true),
           bullet("bu-2", "", "Conduct Heuristic Evaluations and co-design workshops to align business goals with user needs.", true),
           bullet("bu-3", "", "Create Information Architecture in close collaboration with SEO teams to optimize for both usability and organic findability.", true),
-          bullet("bu-4", "", "Create user flows, high-fidelity wireframes, and interactive prototypes for complex e-commerce ecosystems", true),
+          bullet("bu-4", "", "Create user flows, high-fidelity wireframes, and interactive prototypes for complex e-commerce ecosystems.", true),
         ],
       },
       {
@@ -193,7 +193,7 @@ function createState(preset) {
         segments: [
           seg("sx-a", "UX/UI Designer @ ", 700),
           seg("sx-b", "Sioux", 700, "#0059e7"),
-          seg("sx-c", "  (Communication Agency)", 400),
+          seg("sx-c", " (Communication Agency)", 400),
         ],
         bullets: [
           bullet("sx-1", "", "Focused on Digital Brand Identity and UI design for communication-driven projects.", true),
@@ -242,12 +242,41 @@ function isValid(value) {
   return Boolean(value && value.header && value.description && value.privacy && Array.isArray(value.skills) && Array.isArray(value.right));
 }
 
+const COPY_FIXES = [
+  ["Septemver", "September"],
+  ["Septemer", "September"],
+  ["Dicember", "December"],
+  ["University di ", "University of "],
+  ["Wordpress", "WordPress"],
+  ["Javascript", "JavaScript"],
+  ["Matlab", "MATLAB"],
+  ["|  July", "| July"],
+  ["  (", " ("],
+  ["Machine Learning basics ", "Machine Learning basics"],
+  ["functional system requirements ", "functional system requirements."],
+  ["e all’art. 13 GDPR 679/16.", "e all’art. 13 del GDPR (Regolamento UE 2016/679)."],
+];
+
+function fixCopy(value) {
+  if (typeof value === "string") {
+    const text = COPY_FIXES.reduce((current, [from, to]) => current.split(from).join(to), value);
+    return text
+      .replace(/project lifecycles(?!\.)/g, "project lifecycles.")
+      .replace(/e-commerce ecosystems(?!\.)/g, "e-commerce ecosystems.");
+  }
+  if (Array.isArray(value)) return value.map(fixCopy);
+  if (value && typeof value === "object") {
+    return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, fixCopy(item)]));
+  }
+  return value;
+}
+
 function load() {
   const preset = params.get("preset");
   if (preset === "ux" || preset === "research") return createState(preset);
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
-    if (isValid(saved)) return saved;
+    if (isValid(saved)) return fixCopy(saved);
   } catch (err) {
     /* ignore broken storage */
   }
