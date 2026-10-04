@@ -458,7 +458,7 @@ function renderEditor() {
         <button type="button" data-action="zoom" data-zoom="1.5" class="${zoom === 1.5 ? "is-active" : ""}">150%</button>
       </div>
       <div class="head-actions">
-        <button type="button" data-action="print">Stampa / PDF</button>
+        <button type="button" data-action="print">Esporta PDF</button>
       </div>
     </div>
     <div class="editor-body">
@@ -835,7 +835,7 @@ function onEditorClick(event) {
   if (!button || button.disabled) return;
   const action = button.dataset.action;
   if (action === "print") {
-    window.print();
+    exportPdf();
     return;
   }
   if (action === "zoom") {
@@ -959,6 +959,27 @@ function onSheetClick(event) {
   event.preventDefault();
 }
 
+function fitPrintPage() {
+  const previousZoom = sheet.style.zoom;
+  sheet.style.zoom = "1";
+  const width = Math.ceil(sheet.offsetWidth);
+  const height = Math.ceil(sheet.offsetHeight);
+  sheet.style.zoom = previousZoom;
+  let style = document.getElementById("print-page");
+  if (!style) {
+    style = document.createElement("style");
+    style.id = "print-page";
+    document.head.appendChild(style);
+  }
+  style.textContent = `@page { size: ${width}px ${height}px; margin: 0; }`;
+}
+
+async function exportPdf() {
+  await document.fonts.ready;
+  fitPrintPage();
+  window.print();
+}
+
 function bind() {
   editor.addEventListener("input", onEditorInput);
   editor.addEventListener("change", onEditorChange);
@@ -967,6 +988,7 @@ function bind() {
   sheet.addEventListener("keydown", onSheetKeydown);
   sheet.addEventListener("paste", onSheetPaste);
   sheet.addEventListener("click", onSheetClick);
+  window.addEventListener("beforeprint", fitPrintPage);
 }
 
 function init() {

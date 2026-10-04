@@ -558,21 +558,22 @@ body.bare .sheet { box-shadow: none; margin: 0; }
   .editor-body { overflow: visible; }
 }
 
-@page { size: A4 portrait; margin: 0; }
-
 @media print {
   html, body, .app, .preview {
-    height: auto;
-    overflow: visible;
-    background: none;
-    display: block;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    background: var(--paper);
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
   .editor, .preview-note { display: none !important; }
-  .preview { padding: 0; }
   .sheet {
     box-shadow: none;
-    margin: 0;
-    zoom: 1.334 !important;
+    margin: 0 !important;
+    zoom: 1 !important;
+    width: 595px !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
